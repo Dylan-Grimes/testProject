@@ -22,12 +22,12 @@ pipeline {
                 sh 'sudo docker-compose up -d'
             }
         }
-        stage('Selenium Tests') {
+        /*stage('Selenium Tests') {
             steps {
                 dir("server/") {
                     sh 'mvn test -Dtest=SeleniumSuite'
                 }
             }
-        }
+        }*/
     }
 }
