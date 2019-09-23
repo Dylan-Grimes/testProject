@@ -77,7 +77,6 @@ function teamRequest(method, body, extension) {
         extension = "";
     } 
     let endpoint = "team/" + extension;
-    method = method.toUpperCase();
     let callback;
     method == "GET" ? callback = showData : callback = getData; 
     let headers = {
