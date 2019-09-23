@@ -205,6 +205,73 @@
 </div>
 <!-- /#wrapper -->
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Create new pet</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return addPet(this)">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name:</label>
+                        <input name="name" type="text" class="form-control" id="inputName">
+                        <label for="recipient-name" class="col-form-label">Type:</label>
+                        <input name="type" type="text" class="form-control" id="inputType">
+                        <label for="recipient-name" class="col-form-label">Age:</label>
+                        <input name="age" type="number" class="form-control" id="inputAge">
+                        <label for="recipient-name" class="col-form-label">Colour:</label>
+                        <input name="colour" type="text" class="form-control" id="inputColour">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Update functionality Modal -->
+<div class="modal fade" id="updateFunctionality" tabindex="-1" role="dialog" aria-labelledby="updateFunctionalityTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateFunctionalityTitle">Update a pet</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return submitUpdateForm(this)">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">ID</label>
+                        <input name="id" type="number" class="form-control" id="inputUpdateId">
+                        <label for="recipient-name" class="col-form-label">Name:</label>
+                        <input name="name" type="text" class="form-control" id="inputUpdateName">
+                        <label for="recipient-name" class="col-form-label">Type:</label>
+                        <input name="type" type="text" class="form-control" id="inputUpdateType">
+                        <label for="recipient-name" class="col-form-label">Age:</label>
+                        <input name="age" type="number" class="form-control" id="inputUpdateAge">
+                        <label for="recipient-name" class="col-form-label">Colour:</label>
+                        <input name="colour" type="text" class="form-control" id="inputUpdateColour">
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
