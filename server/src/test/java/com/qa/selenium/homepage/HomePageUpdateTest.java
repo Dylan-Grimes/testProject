@@ -30,7 +30,7 @@ public class HomePageUpdateTest {
 	
 	@Test
 	public void updateTest() throws InterruptedException {
-		homepage.updateNote(SeleniumConst.OLD_TEXT, SeleniumConst.NEW_TEXT);
+		homepage.updateTeam(SeleniumConst.OLD_TEXT, SeleniumConst.NEW_TEXT);
 	}
 	
 	@After

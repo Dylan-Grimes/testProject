@@ -1,81 +1,82 @@
 function getData() {
-    noteRequest("GET");
+    teamRequest("GET");
 }
 
-function postNote(event) {
+function postTeam(event) {
     event.preventDefault();
-    let data = event.target.noteValue.value;
+    let data = event.target.teamValue.value;
     if(data){
-        noteRequest("POST", {"text": data});
+        teamRequest("POST", {"text": data});
     } 
-    event.target.noteValue.value = "";
+    event.target.teamValue.value = "";
     return false;
 }
 
-function updateNote(event){
+
+function updateTeam(event){
     event.preventDefault();
     let body ={
         id: event.target.parentElement.parentElement.id,
-        text: event.target.noteText.value
+        text: event.target.teamText.value
     }   
 
-    noteRequest("PUT", body);
+    teamRequest("PUT", body);
 }
 
-function deleteNote(event){
+function deleteTeam(event){
     let id = event.target.parentElement.id;
-    noteRequest("DELETE", "", id);
+    teamRequest("DELETE", "", id);
 }
 
 function showData(request) {
-    let list = document.getElementById("notes");
+    let list = document.getElementById("teams");
     list.innerHTML = "";
 
-    let notes = JSON.parse(request.response);
+    let teams = JSON.parse(request.response);
 
-    let makeNote = (note) => {
+    let makeTeam = (team) => {
         let listItem = document.createElement("li");
         
         let para = document.createElement("p");
-        para.innerText = note.text;
+        para.innerText = team.text;
         para.setAttribute("onclick", "addInput(event)")
-        listItem.setAttribute("id", note.id);
+        listItem.setAttribute("id", team.id);
         
         let button = document.createElement("button");
         button.innerText = "Delete";
-        button.setAttribute("onclick", "deleteNote(event)")        
+        button.setAttribute("onclick", "deleteTeam(event)")
         listItem.appendChild(para);
         listItem.appendChild(button);
         list.appendChild(listItem)
     }
 
-    notes.forEach(note => makeNote(note))
+    teams.forEach(team => makeTeam(team))
 }
 
 function addInput(event){
-    let note = event.target;
-    note.removeAttribute("onclick");
-    let text = note.innerText;
-    note.innerText = "";
+    let team = event.target;
+    team.removeAttribute("onclick");
+    let text = team.innerText;
+    team.innerText = "";
     
     let form = document.createElement("form");
     let inputBox = document.createElement("input");
-    form.setAttribute("onsubmit", "updateNote(event)");
+    form.setAttribute("onsubmit", "updateTeam(event)");
     inputBox.type = "text";
-    inputBox.name = "noteText";
+    inputBox.name = "teamText";
     inputBox.value = text;
     let submit = document.createElement("submit");
     submit.className = "hidden";
     form.appendChild(inputBox);
     form.appendChild(submit);
-    note.appendChild(form);
+    team.appendChild(form);
 }
 
-function noteRequest(method, body, extension) {
+function teamRequest(method, body, extension) {
     if (!extension){
         extension = "";
     } 
-    let endpoint = "note/" + extension;
+    let endpoint = "team/" + extension;
     method = method.toUpperCase();
     let callback;
     method == "GET" ? callback = showData : callback = getData; 

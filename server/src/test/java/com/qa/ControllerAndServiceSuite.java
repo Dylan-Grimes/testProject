@@ -4,11 +4,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import com.qa.controller.NoteControllerTest;
-import com.qa.service.NoteServiceTest;
+import com.qa.controller.TeamControllerTest;
+import com.qa.service.TeamServiceTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({NoteControllerTest.class, NoteServiceTest.class})
+@SuiteClasses({TeamControllerTest.class, TeamServiceTest.class})
 public class ControllerAndServiceSuite {
 
 }

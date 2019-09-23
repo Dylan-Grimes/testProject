@@ -31,11 +31,11 @@ public class HomePageCreateTest {
 	}
 	
 	@Test
-	public void addNoteTest() {
+	public void addTeamTest() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		int before = homepage.noteLength();
-		homepage.addNote(SeleniumConst.OLD_TEXT);
-		assertEquals(before + 1, homepage.noteLength());
+		int before = homepage.teamLength();
+		homepage.addTeam(SeleniumConst.OLD_TEXT);
+		assertEquals(before + 1, homepage.teamLength());
 	}
 	
 	@After

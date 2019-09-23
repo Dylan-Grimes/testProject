@@ -6,18 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Note {
+public class Team {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
 	String text;
 	
-	public Note() {
+	public Team() {
 		super();
 	}
 	
-	public Note(Long id, String text) {
+	public Team(Long id, String text) {
 		super();
 		this.id = id;
 		this.text = text;
@@ -37,8 +37,8 @@ public class Note {
 	}
 	
 	// Should be a factory pattern 
-	public static Note createNote() {
-		return new Note();
+	public static Team createTeam() {
+		return new Team();
 	}
 	
 }

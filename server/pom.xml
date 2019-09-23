@@ -12,13 +12,11 @@
 
 	<groupId>com.qa</groupId>
 
-	<artifactId>notes</artifactId>
+	<artifactId>teams</artifactId>
 
 	<version>0.0.1</version>
 
-	<name>notes</name>
-
-	<description>Demo project for video</description>
+	<name>csgoDatabase</name>
 
 	<properties>
 		<java.version>1.8</java.version>

@@ -1,25 +1,25 @@
 package com.qa.dto;
 
-import com.qa.persistence.model.Note;
+import com.qa.persistence.model.Team;
 
-public class NoteDto {
+public class TeamDto {
 
 	Long id;
 	String text;
 	
-	public NoteDto() {
+	public TeamDto() {
 		super();
 	}
 
-	public NoteDto(Long id, String text) {
+	public TeamDto(Long id, String text) {
 		super();
 		this.id = id;
 		this.text = text;
 	}
 
-	public NoteDto(Note note) {
-		this.id = note.getId();
-		this.text = note.getText();
+	public TeamDto(Team team) {
+		this.id = team.getId();
+		this.text = team.getText();
 	}
 	
 	public Long getId() {

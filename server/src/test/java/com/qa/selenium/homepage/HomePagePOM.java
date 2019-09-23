@@ -21,11 +21,11 @@ public class HomePagePOM {
 	@FindBy(id = "submitInput")
 	private WebElement submitInput;
 	
-	@FindBy(id = "notes")
-	private WebElement noteList;
+	@FindBy(id = "teams")
+	private WebElement teamList;
 	
 	@FindBys ({
-		@FindBy(id = "notes"),
+		@FindBy(id = "teams"),
 		@FindBy(tagName = "li")
 	})
 	private List<WebElement> listItems;
@@ -35,31 +35,31 @@ public class HomePagePOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void addNote(String text) {
+	public void addTeam(String text) {
 		textInput.sendKeys(text);
 		textInput.submit();
 	}
 	
-	public int noteLength() {
+	public int teamLength() {
 		return listItems.size();
 	}
 	
-	public void deleteNote(String searchText) {
-		findNote(searchText).findElement(By.tagName("button")).click();
+	public void deleteTeam(String searchText) {
+		findTeam(searchText).findElement(By.tagName("button")).click();
 	}
 	
-	public void updateNote(String searchText, String replaceText) throws InterruptedException {
-		WebElement element = findNote(searchText);
+	public void updateTeam(String searchText, String replaceText) throws InterruptedException {
+		WebElement element = findTeam(searchText);
 		
 		element.findElement(By.tagName("p")).click();
 		WebElement input = element.findElement(By.tagName("input"));
 		input.clear();
 		input.sendKeys(replaceText);
 		input.submit();
-//		return findNote(replaceText).findElement(By.tagName("p")).getText();
+//		return findTeam(replaceText).findElement(By.tagName("p")).getText();
 	}
 	
-	private WebElement findNote(String text) {
+	private WebElement findTeam(String text) {
 		for(WebElement element: listItems) {
 			if(element.findElement(By.tagName("p")).getText().equals(text)) {
 				return element;

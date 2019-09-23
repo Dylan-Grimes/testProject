@@ -2,8 +2,8 @@ package com.qa.persistence.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.qa.persistence.model.Note;
+import com.qa.persistence.model.Team;
 
-public interface NoteRepository extends JpaRepository<Note, Long>{
+public interface TeamRepository extends JpaRepository<Team, Long>{
 
 }

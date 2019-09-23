@@ -32,9 +32,9 @@ public class HomePageDeleteTest {
 	
 	@Test
 	public void deleteTest() {
-		int before = homepage.noteLength();
-		homepage.deleteNote(SeleniumConst.NEW_TEXT);
-		assertEquals(before - 1, homepage.noteLength());
+		int before = homepage.teamLength();
+		homepage.deleteTeam(SeleniumConst.NEW_TEXT);
+		assertEquals(before - 1, homepage.teamLength());
 	}
 	
 	@After
