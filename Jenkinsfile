@@ -9,13 +9,14 @@ pipeline {
                 }
             }
         }
-        /*stage('Junit Tests') {
+        stage('Junit Tests') {
             steps {
-                dir("server/") {
-                    sh 'mvn test -Dtest=ControllerAndServiceSuite'
-                }
+                //dir("server/") {
+                 //   sh 'mvn test -Dtest=ControllerAndServiceSuite'
+                //}
+                //do nothing
             }
-        */}
+        }
         stage('Deploy') {
             steps {
                 sh 'sudo docker-compose build'
