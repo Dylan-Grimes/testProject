@@ -5,7 +5,7 @@ import com.qa.persistence.model.Team;
 public class TeamDto {
 
 	Long id;
-	String textName;
+	String teamName;
 	Double teamRank;
 	
 	public TeamDto() {
