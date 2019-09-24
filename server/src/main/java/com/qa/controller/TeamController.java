@@ -22,6 +22,7 @@ public class TeamController {
 	
 	@Autowired
 	private TeamService service;
+	private TeamsRepository repository;
 
 //	@RequestMapping(value = "team", method = RequestMethod.GET)
 ////	public ResponseEntity<List<TeamDto>> getTeams(){
