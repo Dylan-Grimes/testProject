@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.dto.TeamDto;
 import com.qa.service.TeamService;
-import com.qa.models.Team;
+import com.qa.model.Team;
 
 @RestController
 @CrossOrigin
@@ -30,7 +30,7 @@ public class TeamController {
 ////		return new ResponseEntity<List<TeamDto>>(service.getTeams(), HttpStatus.OK);
 ////	}
 
-	@RequestMapping(value = "teams", method = RequestMethod.GET)
+	@RequestMapping(value = "team", method = RequestMethod.GET)
 	public List<Team> listAllTeams() {
 		return repository.findAll();
 	}
