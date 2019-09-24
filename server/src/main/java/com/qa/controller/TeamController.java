@@ -31,7 +31,7 @@ public class TeamController {
 ////	}
 
 	@RequestMapping(value = "teams", method = RequestMethod.GET)
-	public List<Teams> listAllTeams() {
+	public List<Team> listAllTeams() {
 		return repository.findAll();
 	}
 	
