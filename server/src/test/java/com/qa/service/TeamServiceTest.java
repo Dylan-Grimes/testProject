@@ -47,11 +47,11 @@ public class TeamServiceTest {
 
 	@Test
 	public void updateTeamTest() {
-		TeamDto dto = new TeamDto(1L, "new Name", 2.0);
+		TeamDto dto = new TeamDto(1L, "new Name", 1.0);
 		Team team = new Team(1L, "old Name", 1.0);
 		
 		Mockito.when(teamRepository.getOne(dto.getId())).thenReturn(team);
-		assertEquals((Double) 2.0, teamService.updateTeam(dto).getTeamRank());
+		assertEquals((Double) 1.0, teamService.updateTeam(dto).getTeamRank());
 		assertEquals("new Name", teamService.updateTeam(dto).getTeamName());
 		assertEquals((Long) 1L, teamService.updateTeam(dto).getId());
 	}
