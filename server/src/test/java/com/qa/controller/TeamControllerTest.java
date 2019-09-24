@@ -30,8 +30,8 @@ public class TeamControllerTest {
 	@Test
 	public void getTeamsTest() {
 		List<TeamDto> teamDtos = new ArrayList<TeamDto>();
-		teamDtos.add(new TeamDto(1L, "Text"));
-		teamDtos.add(new TeamDto(3L, "More Text"));
+		teamDtos.add(new TeamDto(1L, "Name", 1.0));
+		teamDtos.add(new TeamDto(3L, "More Name", 2.0));
 		
 		Mockito.when(teamService.getTeams()).thenReturn(teamDtos);
 		
@@ -41,8 +41,8 @@ public class TeamControllerTest {
 
 	@Test
 	public void createTeamTest() {
-		TeamDto dto = new TeamDto(null, "Text");
-		Mockito.when(teamService.createTeam(dto)).thenReturn(new TeamDto(2L, "Text"));
+		TeamDto dto = new TeamDto(null, "Name", 1.0);
+		Mockito.when(teamService.createTeam(dto)).thenReturn(new TeamDto(2L, "Name", 1.0));
 		
 		assertEquals((Long) 2L, teamController.createTeam(dto).getBody().getId());
 		assertEquals(HttpStatus.CREATED, teamController.createTeam(dto).getStatusCode());
@@ -51,8 +51,8 @@ public class TeamControllerTest {
 
 	@Test
 	public void updateTeamTest() {
-		TeamDto dto = new TeamDto(1L, "Text");
-		Mockito.when(teamService.updateTeam(dto)).thenReturn(new TeamDto(1L, "Text"));
+		TeamDto dto = new TeamDto(1L, "Name", 2.0);
+		Mockito.when(teamService.updateTeam(dto)).thenReturn(new TeamDto(1L, "Name", 1.0));
 		
 		assertEquals((Long) 1L, teamController.updateTeam(dto).getBody().getId());
 		assertEquals(HttpStatus.ACCEPTED, teamController.updateTeam(dto).getStatusCode());
@@ -61,7 +61,7 @@ public class TeamControllerTest {
 	@Test
 	public void deleteTeamTest() {
 		Long id = 1L;
-		TeamDto dto = new TeamDto(1L, "Text");
+		TeamDto dto = new TeamDto(1L, "Name", 1.0);
 		Mockito.when(teamService.deleteTeam(id)).thenReturn(dto);
 		
 		assertEquals((Long) 1L, teamController.deleteTeam(id).getBody().getId());
