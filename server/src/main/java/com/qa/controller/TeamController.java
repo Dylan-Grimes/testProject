@@ -23,7 +23,7 @@ public class TeamController {
 	@Autowired
 	private TeamService service;
 
-	@RequestMapping(path = "team/", method = {RequestMethod.GET})
+	@RequestMapping(value = "team", method = RequestMethod.GET)
 	public ResponseEntity<List<TeamDto>> getTeams(){
 		return new ResponseEntity<List<TeamDto>>(service.getTeams(), HttpStatus.OK);
 	}

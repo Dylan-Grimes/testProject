@@ -1,16 +1,16 @@
 function readPets() {
 
-    makeRequest("http://34.89.70.8:8081").then((data) => {
+    makeRequest("http://34.89.70.8:9000").then((data) => {
         console.log(data);
 
-        let petData = JSON.parse(data);
+        let teamData = JSON.parse(data);
 
-        console.log(petData);
+        console.log(teamData);
 
         let petInfo = [];
         let pets;
 
-        for (let p of petData) {
+        for (let p of teamData) {
             pets = [];
 
             pets.push(p.id);
