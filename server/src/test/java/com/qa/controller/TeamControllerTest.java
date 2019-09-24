@@ -27,16 +27,16 @@ public class TeamControllerTest {
 	@Mock
 	private TeamService teamService;
 	
-	@Test
-	public void getTeamsTest() {
-		List<TeamDto> teamDtos = new ArrayList<TeamDto>();
-		teamDtos.add(new TeamDto(1L, "Name", 1.0));
-		teamDtos.add(new TeamDto(3L, "More Name", 2.0));
-		
-		Mockito.when(teamService.getTeams()).thenReturn(teamDtos);
-		
-		assertEquals(HttpStatus.OK, teamController.getTeams().getStatusCode());
-	}
+//	@Test
+//	public void getTeamsTest() {
+//		List<TeamDto> teamDtos = new ArrayList<TeamDto>();
+//		teamDtos.add(new TeamDto(1L, "Name", 1.0));
+//		teamDtos.add(new TeamDto(3L, "More Name", 2.0));
+//
+//		Mockito.when(teamService.getTeams()).thenReturn(teamDtos);
+//
+//		assertEquals(HttpStatus.OK, teamController.getTeams().getStatusCode());
+//	}
 	
 
 	@Test
