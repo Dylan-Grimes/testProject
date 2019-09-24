@@ -26,14 +26,16 @@ public class TeamService {
 	public TeamDto createTeam(TeamDto teamDto){
 		teamDto.setId(null);
 		Team team = Team.createTeam();
-		team.setText(teamDto.getText());
+		team.setTeamName(teamDto.getTeamName());
+		team.setTeamRank(teamDto.getTeamRank());
 		
 		return new TeamDto(teamRepository.saveAndFlush(team));
 	}
 	
 	public TeamDto updateTeam(TeamDto teamDto){
 		Team team = teamRepository.getOne(teamDto.getId());
-		team.setText(teamDto.getText());
+		team.setTeamName(teamDto.getTeamName());
+		team.setTeamRank(teamDto.getTeamRank());
 		teamRepository.flush();
 		return new TeamDto(team);
 	}
