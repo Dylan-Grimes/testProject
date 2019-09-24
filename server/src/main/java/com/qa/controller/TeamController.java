@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.dto.TeamDto;
 import com.qa.service.TeamService;
+import com.qa.models.Teams;
 
 @RestController
 @CrossOrigin
