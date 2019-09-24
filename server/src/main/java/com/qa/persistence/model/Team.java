@@ -11,16 +11,18 @@ public class Team {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
-	String text;
+	String teamName;
+	Double teamRank;
 	
 	public Team() {
 		super();
 	}
 	
-	public Team(Long id, String text) {
+	public Team(Long id, String teamName, Double teamRank) {
 		super();
 		this.id = id;
-		this.text = text;
+		this.teamName = teamName;
+		this.teamRank = teamRank;
 	}
 
 	public Long getId() {
@@ -29,11 +31,17 @@ public class Team {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getText() {
-		return text;
+	public String getTeamName() {
+		return teamName;
 	}
-	public void setText(String text) {
-		this.text = text;
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
+	public Double getTeamRank() {
+		return teamRank;
+	}
+	public void setTeamRank(Double teamName) {
+		this.teamRank = teamRank;
 	}
 	
 	// Should be a factory pattern 
