@@ -5,38 +5,45 @@ import com.qa.persistence.model.Team;
 public class TeamDto {
 
 	Long id;
-	String text;
+	String textName;
+	Double teamRank;
 	
 	public TeamDto() {
 		super();
 	}
 
-	public TeamDto(Long id, String text) {
+	public TeamDto(Long id, String teamName, Double teamRank) {
 		super();
 		this.id = id;
-		this.text = text;
+		this.teamName = teamName;
+		this.teamRank = teamRank;
 	}
 
 	public TeamDto(Team team) {
-		this.id = team.getId();
-		this.text = team.getText();
-	}
-	
-	public Long getId() {
-		return id;
-	}
+			super();
+			this.id = id;
+			this.teamName = teamName;
+			this.teamRank = teamRank;
+		}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-	}
+		public Long getId() {
+			return id;
+		}
+		public void setId(Long id) {
+			this.id = id;
+		}
+		public String getTeamName() {
+			return teamName;
+		}
+		public void setTeamName(String teamName) {
+			this.teamName = teamName;
+		}
+		public Double getTeamRank() {
+			return teamRank;
+		}
+		public void setTeamRank(Double teamName) {
+			this.teamRank = teamRank;
+		}
 	
 	
 }
