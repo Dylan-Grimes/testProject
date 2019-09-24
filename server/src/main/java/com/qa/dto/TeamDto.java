@@ -22,8 +22,8 @@ public class TeamDto {
 	public TeamDto(Team team) {
 			super();
 			this.id = id;
-			this.teamName = teamName;
-			this.teamRank = teamRank;
+//			this.teamName = teamName;
+//			this.teamRank = teamRank;
 		}
 
 		public Long getId() {
@@ -41,7 +41,7 @@ public class TeamDto {
 		public Double getTeamRank() {
 			return teamRank;
 		}
-		public void setTeamRank(Double teamName) {
+		public void setTeamRank(Double teamRank) {
 			this.teamRank = teamRank;
 		}
 	
