@@ -17,15 +17,20 @@ import com.qa.dto.TeamDto;
 import com.qa.service.TeamService;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin
 public class TeamController {
 	
 	@Autowired
 	private TeamService service;
 
-	@RequestMapping(value = "team", method = RequestMethod.GET)
-	public ResponseEntity<List<TeamDto>> getTeams(){
-		return new ResponseEntity<List<TeamDto>>(service.getTeams(), HttpStatus.OK);
+//	@RequestMapping(value = "team", method = RequestMethod.GET)
+////	public ResponseEntity<List<TeamDto>> getTeams(){
+////		return new ResponseEntity<List<TeamDto>>(service.getTeams(), HttpStatus.OK);
+////	}
+
+	@RequestMapping(value = "teams", method = RequestMethod.GET)
+	public List<Teams> listAllTeams() {
+		return repository.findAll();
 	}
 	
 	@RequestMapping(path = "team/", method = {RequestMethod.POST})
