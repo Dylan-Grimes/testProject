@@ -1,6 +1,6 @@
 function readPets() {
 
-    makeRequest("http://35.246.32.85:9000/pets").then((data) => {
+    makeRequest("http://34.89.70.8:9000").then((data) => {
         console.log(data);
 
         let petData = JSON.parse(data);
