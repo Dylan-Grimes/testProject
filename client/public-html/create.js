@@ -8,7 +8,7 @@ function addTeam(data) {
         }
     }
 
-    makeRequest("http://http://34.89.70.8:9000/pets", formDataObj, type = "POST")
+    makeRequest("http://http://34.89.70.8:8081/team", formDataObj, type = "POST")
         .then((data) => {
             console.log("it Worked!" + data);
 

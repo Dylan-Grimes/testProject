@@ -4,7 +4,7 @@ function deletePet() {
 
     console.log(input);
 
-    makeRequest("http://35.246.32.85:9000/pets/", input , type = "DELETE")
+    makeRequest("http://35.246.32.85:8081/team", input , type = "DELETE")
         .then((data) => {
             console.log("Deleted" + data);
             window.location.href = window.location.href

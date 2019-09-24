@@ -12,10 +12,10 @@ function submitUpdateForm(formData) {
         }
     }
 
-    console.log("http://35.246.32.85:9000/pets/" + id);
+    console.log("http://35.246.32.85:8081/team" + id);
     console.log(keyValues);
 
-    makeRequest("http://35.246.32.85:9000/pets/" + id, keyValues, "PUT")
+    makeRequest("http://35.246.32.85:8081/team" + id, keyValues, "PUT")
         .then((data) => {
             console.log("it Worked!" + data);
 
